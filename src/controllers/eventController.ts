@@ -13,7 +13,7 @@ export class EventController {
         this.createEvent(prefix, router);
         this.getUserEvents(prefix, router);
         this.updateEvent(prefix, router);
-        this.getPosts(prefix, router);
+        this.getAllEvents(prefix, router);
 
     }
 
@@ -35,12 +35,10 @@ export class EventController {
         })
     }
 
-    private getPosts(prefix: string, router: Router): any {
-        router.get(prefix + "/:user_id", (req, res: Response, next: NextFunction) => {
-            console.log('id: ' + req.params.user_id);
-            return res.json({ data: "Some posts" });
+    private getAllEvents(prefix: string, router: Router): any {
+        router.get(prefix + "", authorize, async (req, res: Response, next: NextFunction) => {
+            new EventService().getAllEvents(req, res);
         })
     }
-
 
 }

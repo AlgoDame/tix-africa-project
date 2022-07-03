@@ -48,7 +48,7 @@ export class LoginService extends BaseService {
             if(error.status){
                 return this.sendError(this.req, this.res, error.status, error.message);
             }
-            return this.sendError(this.req, this.res, 500, error);
+            return this.sendError(this.req, this.res, 500, error.message);
 
         }
         

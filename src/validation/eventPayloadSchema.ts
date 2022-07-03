@@ -18,3 +18,8 @@ export const updateEventSchema = Joi.object().keys({
     end_date: Joi.date().iso().messages({"date.format": "Date format is YYYY-MM-DD"})
     
 });
+
+export const getEventsQuerySchema = Joi.object().keys({
+    next_page_token: Joi.number()
+    
+});

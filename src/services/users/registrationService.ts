@@ -25,9 +25,9 @@ export class RegistrationService extends BaseService {
 
             return this.sendResponse(req, res, 201, userRecord);
 
-        } catch (error) {
+        } catch (error:any) {
             console.error(`Error occurred in registrationService::: ${error}`);
-            return this.sendError(req, res, 500, error);
+            return this.sendError(req, res, 500, error.message);
         }
     }
 
