@@ -6,7 +6,7 @@
     "scripts": {
         "test": "jest --forceExit",
         "dev": "ts-node src/index",
-        "build": "tsc -p .",
+        "postinstall": "tsc",
         "start": "node dist/index"
     },
     "repository": {
